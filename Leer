@@ -2,9 +2,10 @@ Pasos para poder ejecutar el sitio web:
 Descargar:
 https://github.com/Luis22Angel/Banxico.git
 
-2.- Restaurar base de datos (SQL Server Management)
-3.- Una vez restaurada la BD ir al archivo appsettings.json y cambiar 
-la cadena de conexion 
+2.- Restaurar base de datos (SQL Server Management) -> TipoDeCambio.bak
+3.- Una vez restaurada la BD ir al archivo appsettings.json ubicado en: 
+  Web->appsettings.json
+y cambiar la cadena de conexion 
 "Data Source=NOM_SERVIDOR;Initial Catalog=NOM_BD;Persist Security Info=True;User ID=USUARIO;Password=CONTRASENA;"
 
 Una vez realizado el cambio.
