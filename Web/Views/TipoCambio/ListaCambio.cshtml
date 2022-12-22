@@ -1,0 +1,41 @@
+﻿@model List<TipoCambioModel>
+@{
+    ViewData["Title"] = "ListaCambio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        Lista
+    </div>
+    <div class="card-body">
+       
+        <a asp-action="GuardarCambio" asp-controller="TipoCambio" class="btn btn-success">Crear Nuevo</a>
+       <hr />
+       <table class="table table-bordered">
+           <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Determinacion</th>
+                    <th>DOF</th>
+                    <th>Obligaciones</th>
+                </tr>            
+           </thead>
+           <tbody>
+               @foreach (var item in Model){
+                   <tr>
+                        <td>@item.Fecha</td>
+                        <td>@item.Determinacion</td>
+                        <td>@item.Dof</td>
+                        <td>@item.Obligaciones</td>
+                        <td>
+                            <a asp-action="EditarCambio" asp-controller="TipoCambio" class="btn btn-primary btn-sm" asp-route-IdTipoCambio="@item.Id">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="TipoCambio" class="btn btn-danger btn-sm" asp-route-IdTipoCambio="@item.Id">Eliminar</a>
+                        </td>
+                   </tr>
+               }
+           </tbody>
+       </table>
+    </div>
+</div>

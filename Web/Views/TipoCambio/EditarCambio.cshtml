@@ -1,0 +1,44 @@
+﻿@model TipoCambioModel
+@{
+    ViewData["Title"] = "EditarCambio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        Editar
+    </div>
+    <div class="card-body">
+
+        <form asp-action="EditarCambio" asp-controller="TipoCambio" method="post">
+            <input asp-for="Id" type="hidden" class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Fecha</label>
+                <input asp-for="Fecha" type="date" class="form-control">
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Determinacion</label>
+                <input asp-for="Determinacion" type="text" class="form-control">
+                <span asp-validation-for="Determinacion" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">DOF</label>
+                <input asp-for="Dof" type="text" class="form-control">
+                <span asp-validation-for="Dof" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Obligaciones</label>
+                <input asp-for="Obligaciones" type="text" class="form-control">
+                <span asp-validation-for="Obligaciones" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="ListaCambio" asp-controller="TipoCambio" class="btn btn-warning">Volver a la lista</a>
+        </form>
+
+    </div>
+</div>
+
+
